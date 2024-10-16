@@ -2,8 +2,11 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-
-export default function Hero() {
+interface HeroProps {
+  theme: string;
+  toggleTheme: () => void;
+}
+export default function Hero({ theme }: HeroProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slides = [
     "/hero (1).jpg",
@@ -13,16 +16,32 @@ export default function Hero() {
   ];
 
   const developers = [
-    { name: "CRED", logo: "/CRED.png" },
-    { name: "Hassan Allam", logo: "/Hassan Allam.png" },
-    { name: "IL CAZAR", logo: "/IL CAZAR.png" },
-    { name: "LMD", logo: "/LMD.png" },
-    { name: "ORA", logo: "/ORA.png" },
-    { name: "CRED", logo: "/CRED.png" },
-    { name: "Hassan Allam", logo: "/Hassan Allam.png" },
-    { name: "IL CAZAR", logo: "/IL CAZAR.png" },
-    { name: "LMD", logo: "/LMD.png" },
-    { name: "ORA", logo: "/ORA.png" },
+    { name: "CRED", logo: "/CRED.png", lightLogo: "/CRED-light.png" },
+    {
+      name: "Hassan Allam",
+      logo: "/Hassan Allam.png",
+      lightLogo: "/Hassan Allam-light.png",
+    },
+    {
+      name: "IL CAZAR",
+      logo: "/IL CAZAR.png",
+      lightLogo: "/IL CAZAR-light.png",
+    },
+    { name: "LMD", logo: "/LMD.png", lightLogo: "/LMD-light.png" },
+    { name: "ORA", logo: "/ORA.png", lightLogo: "/ORA-light.png" },
+    { name: "CRED", logo: "/CRED.png", lightLogo: "/CRED-light.png" },
+    {
+      name: "Hassan Allam",
+      logo: "/Hassan Allam.png",
+      lightLogo: "/Hassan Allam-light.png",
+    },
+    {
+      name: "IL CAZAR",
+      logo: "/IL CAZAR.png",
+      lightLogo: "/IL CAZAR-light.png",
+    },
+    { name: "LMD", logo: "/LMD.png", lightLogo: "/LMD-light.png" },
+    { name: "ORA", logo: "/ORA.png", lightLogo: "/ORA-light.png" },
   ];
 
   useEffect(() => {
@@ -127,7 +146,7 @@ export default function Hero() {
               className="flex-shrink-0 w-[100px] mx-4 gap-10"
             >
               <Image
-                src={developer.logo}
+                src={theme === "dark" ? developer.lightLogo : developer.logo}
                 alt={developer.name}
                 width={100}
                 height={50}

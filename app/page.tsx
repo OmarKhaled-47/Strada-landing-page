@@ -45,7 +45,7 @@ export default function Home() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
-        <Hero />
+        <Hero theme={theme} />
         <WhoAreWe />
         <TopAreas />
         <Services />
