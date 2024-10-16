@@ -38,9 +38,7 @@ export default function Navbar({ theme, toggleTheme }: NavbarProps) {
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center">
             <Image
-              src={
-                theme === "dark" ? "/Strada Logo Light.svg" : "/Strada Logo.svg"
-              }
+              src={theme === "dark" ? "/Strada Light.svg" : "/Strada Logo.svg"}
               alt="Logo"
               width={100}
               height={100}
