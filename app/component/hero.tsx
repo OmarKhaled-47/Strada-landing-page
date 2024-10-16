@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 interface HeroProps {
   theme: string;
-  toggleTheme: () => void;
 }
 export default function Hero({ theme }: HeroProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
